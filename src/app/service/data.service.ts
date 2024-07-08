@@ -16,7 +16,7 @@ export class DataService {
   getMoreData(name: string) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
   }
-  setPokemonImage(id:string) {
-    return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+ id + '.png';
-  }
+  // setPokemonImage(id:string) {
+  //   return 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/'+ id + '.png';
+  // }
 }

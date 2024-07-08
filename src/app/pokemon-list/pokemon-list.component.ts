@@ -8,7 +8,6 @@ import {DataService} from "../service/data.service";
 })
 export class PokemonListComponent implements OnInit{
   pokemons: any[] = [];
-  // offset: number = 0;
   page = 1;
   totalPokemons: number | undefined;
   constructor(
@@ -41,6 +40,7 @@ export class PokemonListComponent implements OnInit{
           this.dataService.getMoreData(result.name)
             .subscribe((uniqResponse: any) => {
               this.pokemons.push(uniqResponse);
+              // console.log(uniqResponse.types.length);
 
               this.sortPokemon();
               console.log(uniqResponse);
@@ -53,4 +53,5 @@ export class PokemonListComponent implements OnInit{
   //this is how to sort the number by ascending the numbers
   this.pokemons.sort((a, b) => a.id - b.id);
   }
+
 }

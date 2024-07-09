@@ -10,6 +10,27 @@ export class PokemonListComponent implements OnInit{
   pokemons: any[] = [];
   page = 1;
   totalPokemons: number | undefined;
+
+  pokemonType: string| undefined = 'normal';
+  isNormal: boolean = false;
+  isGrass: boolean = false;
+  isFire: boolean = false;
+  isWater: boolean = false;
+  isFlying: boolean = false;
+  isFighting: boolean = false;
+  isPoison: boolean = false;
+  isElectric: boolean = false;
+  isGround: boolean = false;
+  isRock: boolean = false;
+  isPsychic: boolean = false;
+  isIce: boolean = false;
+  isBug: boolean = false;
+  isGhost: boolean = false;
+  isSteel: boolean = false;
+  isDragon: boolean = false;
+  isDark: boolean = false;
+  isFairy: boolean = false;
+
   constructor(
     private dataService: DataService
   ) {
@@ -41,7 +62,7 @@ export class PokemonListComponent implements OnInit{
             .subscribe((uniqResponse: any) => {
               this.pokemons.push(uniqResponse);
               // console.log(uniqResponse.types.length);
-
+              // this.checkPokemonType(uniqResponse.types[0].type.name, uniqResponse.name);
               this.sortPokemon();
               console.log(uniqResponse);
             });
@@ -53,5 +74,58 @@ export class PokemonListComponent implements OnInit{
   //this is how to sort the number by ascending the numbers
   this.pokemons.sort((a, b) => a.id - b.id);
   }
+  getPokemonTypeClasses(type: any): string {
+    return type.type.name;
+  }
+
+  //
+  // checkPokemonType(type: string, u: any){
+  //   this.resetType();
+  //   switch (type) {
+  //     case "grass": this.isGrass = true; break;
+  //     case "fire": this.isFire = true; break;
+  //     case "water": this.isWater = true; break;
+  //     case "flying": this.isFlying = true; break;
+  //     case "fighting": this.isFighting = true; break;
+  //     case "poison": this.isPoison = true; break;
+  //     case "electric": this.isElectric = true; break;
+  //     case "ground": this.isGround = true; break;
+  //     case "rock": this.isRock = true; break;
+  //     case "psychic": this.isPsychic = true; break;
+  //     case "ice": this.isIce = true; break;
+  //     case "bug": this.isBug = true; break;
+  //     case "ghost": this.isGhost = true; break;
+  //     case "steel": this.isSteel = true; break;
+  //     case "dragon": this.isDragon = true; break;
+  //     case "dark": this.isDark = true; break;
+  //     case "fairy": this.isFairy = true; break;
+  //     case "normal": this.isNormal = true; break;
+  //     default: {
+  //       console.log("pokemon type undefined");
+  //       break;
+  //     }
+  //   }
+  // }
+  // resetType(){
+  //   this.isNormal = false;
+  //   this.isGrass = false;
+  //   this.isFire = false;
+  //   this.isWater = false;
+  //   this.isFlying = false;
+  //   this.isFighting = false;
+  //   this.isPoison = false;
+  //   this.isElectric = false;
+  //   this.isGround = false;
+  //   this.isRock = false;
+  //   this.isPsychic = false;
+  //   this.isIce = false;
+  //   this.isBug = false;
+  //   this.isGhost = false;
+  //   this.isSteel = false;
+  //   this.isDragon = false;
+  //   this.isDark = false;
+  //   this.isFairy = false;
+  // }
+
 
 }

@@ -7,8 +7,9 @@
     <h3>{{ pokemon.name | titlecase }}</h3>
     <div>
       <b>Type:</b>
-      <span>{{ pokemon.types[0].type.name | titlecase }}</span>
-      <span *ngIf="pokemon.types.length > 1">/{{ pokemon.types[1].type.name | titlecase }}</span>
+      <span [ngClass]="getPokemonTypeClasses(pokemon.types[0])">{{ pokemon.types[0].type.name | titlecase }}</span>
+      <b *ngIf="pokemon.types.length > 1">/</b>
+      <span *ngIf="pokemon.types.length > 1" [ngClass]="getPokemonTypeClasses(pokemon.types[1])">{{ pokemon.types[1].type.name | titlecase }}</span>
     </div>
     <p>
       <b>Height:</b> {{ pokemon.height }}

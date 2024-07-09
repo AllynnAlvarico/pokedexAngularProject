@@ -89,12 +89,16 @@ span {
     font-size: 18px;
   }
 }
-@media screen and (min-width: 1920px)  {
+@media screen and (min-width: 1080px){
   .pokemon-grid {
     display: grid;
     grid-gap: 16px;
     padding: 20px;
     grid-template-columns:  repeat(auto-fit, minmax(15%, 1fr));
+  }
+  .pokemon-grid .box {
+    height: 300px;
+    font-size: 18px;
   }
 }
 

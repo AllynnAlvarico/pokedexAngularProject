@@ -11,26 +11,6 @@ export class PokemonListComponent implements OnInit{
   page = 1;
   totalPokemons: number | undefined;
 
-  pokemonType: string| undefined = 'normal';
-  isNormal: boolean = false;
-  isGrass: boolean = false;
-  isFire: boolean = false;
-  isWater: boolean = false;
-  isFlying: boolean = false;
-  isFighting: boolean = false;
-  isPoison: boolean = false;
-  isElectric: boolean = false;
-  isGround: boolean = false;
-  isRock: boolean = false;
-  isPsychic: boolean = false;
-  isIce: boolean = false;
-  isBug: boolean = false;
-  isGhost: boolean = false;
-  isSteel: boolean = false;
-  isDragon: boolean = false;
-  isDark: boolean = false;
-  isFairy: boolean = false;
-
   constructor(
     private dataService: DataService
   ) {

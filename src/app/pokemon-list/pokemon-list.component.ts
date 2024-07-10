@@ -40,6 +40,7 @@ export class PokemonListComponent implements OnInit{
         response.results.forEach((result: any) => {
           this.dataService.getMoreData(result.name)
             .subscribe((uniqResponse: any) => {
+              uniqResponse.isToggled = false;
               this.pokemons.push(uniqResponse);
               // console.log(uniqResponse.types.length);
               // this.checkPokemonType(uniqResponse.types[0].type.name, uniqResponse.name);
@@ -56,6 +57,10 @@ export class PokemonListComponent implements OnInit{
   }
   getPokemonTypeClasses(type: any): string {
     return type.type.name;
+  }
+  toggleSwitch(pokemon: any) {
+    console.log("Hello!");
+    pokemon.isToggled = !pokemon.isToggled;
   }
 
   //

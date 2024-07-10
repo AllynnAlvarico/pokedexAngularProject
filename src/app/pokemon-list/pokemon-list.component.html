@@ -3,7 +3,8 @@
     <p>
       <b>ID</b> {{ pokemon.id }}
     </p>
-    <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="{{pokemon.name}}">
+    <mat-slide-toggle (toggle)="toggleSwitch(pokemon)">toggle me</mat-slide-toggle>
+    <img [src]= "pokemon.sprites.other['official-artwork'].front_default" alt="{{pokemon.name}}">
     <h3>{{ pokemon.name | titlecase }}</h3>
     <div>
       <b>Type:</b>
@@ -15,7 +16,7 @@
       <b>Height:</b> {{ pokemon.height }}
     </p>
     <p>
-      <b>Weight:</b> {{ pokemon.weight }} Kg
+      <b>Weight:</b> {{ (pokemon.weight/35.27).toFixed(1) }} kg
     </p>
     <p>
       <b>Attack Power:</b> {{ pokemon.stats[1].base_stat }}
